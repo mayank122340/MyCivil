@@ -1,0 +1,241 @@
+:root {
+  /* Obsidian Glassmorphic Color Palette */
+  --bg-primary: #080b11;
+  --bg-secondary: #0e1320;
+  --bg-tertiary: #161d2f;
+  
+  --glass-bg: rgba(14, 19, 32, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(20, 241, 195, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  
+  /* Text colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Engineering & Architectural Accents */
+  --accent-cyan: #14f1c3;       /* High-precision cyan neon */
+  --accent-cyan-glow: rgba(20, 241, 195, 0.25);
+  --accent-gold: #f59e0b;       /* Vastu/Positive direction gold */
+  --accent-gold-glow: rgba(245, 158, 11, 0.25);
+  --accent-emerald: #10b981;    /* Concrete/Approved state green */
+  --accent-rose: #f43f5e;       /* Warning/Vastu clash red */
+  --accent-blue: #3b82f6;       /* Structural grid blue */
+  --accent-purple: #8b5cf6;     /* Material portal highlight */
+
+  /* Typography & Layouts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  font-family: var(--font-sans);
+  color-scheme: dark;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(20, 241, 195, 0.05) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  border: 1px solid var(--glass-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Premium Typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Glassmorphism Cards & Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 8px 32px 0 rgba(20, 241, 195, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Button & interactive components */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), #0bb598);
+  color: #080b11;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px 0 rgba(20, 241, 195, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(20, 241, 195, 0.6);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(20, 241, 195, 0.2);
+}
+
+/* Form styling */
+.input-field {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan-glow);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(20, 241, 195, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(20, 241, 195, 0.5);
+  }
+}
+
+.pulse-glow-cyan {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-anim {
+  animation: float 4s infinite ease-in-out;
+}
+
+/* Grid & Blueprint backgrounds */
+.blueprint-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+}
+
+.blueprint-grid-fine {
+  background-size: 10px 10px;
+  background-image: 
+    linear-gradient(to right, rgba(20, 241, 195, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 241, 195, 0.03) 1px, transparent 1px);
+}
+
+/* 📐 Phase 2 CAD Usability Styles */
+.cursor-eraser {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f43f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 21-4.3-4.3c-1-1-1-2.5 0-3.5l8.6-8.6c1-1 2.5-1 3.5 0l4.3 4.3c1 1 1 2.5 0 3.5L10.5 21H7Z'/%3E%3Cpath d='M6 13h12'/%3E%3C/svg%3E") 8 16, pointer !important;
+}
+
+.cursor-grab {
+  cursor: grab !important;
+}
+
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+.element-drag-active {
+  filter: drop-shadow(0 0 8px var(--accent-cyan));
+  opacity: 0.8;
+}
+
+.element-hoverable {
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.element-hoverable:hover {
+  filter: drop-shadow(0 0 6px var(--accent-cyan-glow));
+  opacity: 0.9;
+}
+
